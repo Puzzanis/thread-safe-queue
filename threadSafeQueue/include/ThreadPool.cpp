@@ -1,4 +1,4 @@
-#include "ThreadPool.h"
+п»ї#include "ThreadPool.h"
 
 void ThreadPool::start()
 {
@@ -35,13 +35,13 @@ void ThreadPool::work()
 		task_type task_to_do;
 		{
 			std::unique_lock<std::mutex> l(m_locker);
-			if (m_task_queue.empty() && !m_work)  //условие завершения потока
+			if (m_task_queue.empty() && !m_work)  //СѓСЃР»РѕРІРёРµ Р·Р°РІРµСЂС€РµРЅРёСЏ РїРѕС‚РѕРєР°
 			{
 				return;
 			}
 			if (m_task_queue.empty())
 			{
-				m_event_holder.wait(l, [&]() {return !m_task_queue.empty() || !m_work; }); //засыпаем и защищаемся от wake up
+				m_event_holder.wait(l, [&]() {return !m_task_queue.empty() || !m_work; }); //Р·Р°СЃС‹РїР°РµРј Рё Р·Р°С‰РёС‰Р°РµРјСЃСЏ РѕС‚ wake up
 			}
 			if (!m_task_queue.empty())
 			{

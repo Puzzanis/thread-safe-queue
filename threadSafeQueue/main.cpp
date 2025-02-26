@@ -1,4 +1,4 @@
-#include <chrono>
+п»ї#include <chrono>
 #include <iostream>
 #include <mutex>
 #include <thread>
@@ -11,19 +11,19 @@ typedef void (*FuncType) ();
 void task1()
 {
 	std::unique_lock<std::mutex> lock(countLocker);
-	std::cout << "FUNCTION " << __FUNCTION__ << " была выполнена thread_id " << std::this_thread::get_id() << std::endl;
+	std::cout << "FUNCTION " << __FUNCTION__ << " Р±С‹Р»Р° РІС‹РїРѕР»РЅРµРЅР° thread_id " << std::this_thread::get_id() << std::endl;
 }
 
 void task2()
 {
 	std::unique_lock<std::mutex> lock(countLocker);
-	std::cout << "FUNCTION " << __FUNCTION__ << " была выполнена thread_id " << std::this_thread::get_id() << std::endl;
+	std::cout << "FUNCTION " << __FUNCTION__ << " Р±С‹Р»Р° РІС‹РїРѕР»РЅРµРЅР° thread_id " << std::this_thread::get_id() << std::endl;
 }
 
 void task3()
 {
 	std::unique_lock<std::mutex> lock(countLocker);
-	std::cout << "FUNCTION " << __FUNCTION__ << " была выполнена thread_id " << std::this_thread::get_id() << std::endl;
+	std::cout << "FUNCTION " << __FUNCTION__ << " Р±С‹Р»Р° РІС‹РїРѕР»РЅРµРЅР° thread_id " << std::this_thread::get_id() << std::endl;
 }
 
 void produce(RequestHandler &rh) {
